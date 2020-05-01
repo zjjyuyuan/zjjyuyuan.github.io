@@ -7,7 +7,7 @@
 
     
 
-    <title>建站Flag | </title>
+    <title>wenkan的安装 | </title>
     <meta name="author" content="yy">
     
     <meta name="description" content="为未来的自己积累">
@@ -15,7 +15,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta property="og:title" content="建站Flag"/>
+    <meta property="og:title" content="wenkan的安装"/>
     <meta property="og:site_name" content="yy&#39;s Blog"/>
 
     
@@ -199,12 +199,12 @@
             <div class="article-title">
                 
     
-        <h1>建站Flag</h1>
+        <h1>wenkan的安装</h1>
     
 
 
             </div>
-            <time class="pink-link-context" datetime="2020-04-19T14:55:05.000Z"><a href="/2020/04/19/%E5%BB%BA%E7%AB%99Flag/">2020-04-19</a></time>
+            <time class="pink-link-context" datetime="2020-05-01T13:17:46.989Z"><a href="/2020/05/01/wenkan%E7%9A%84%E5%AE%89%E8%A3%85/">2020-05-01</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -214,32 +214,98 @@
             
 
             <div class="toc pink-link-context hide-on-med-and-down">
-    
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#01-wenkan的安装"><span class="section table-of-contents-text">01-wenkan的安装</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#查找文档（Github原文）"><span class="section table-of-contents-text">查找文档（Github原文）</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#自己动手"><span class="section table-of-contents-text">自己动手</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#总结"><span class="section table-of-contents-text">总结</span></a></li></ol></li></ol>
 </div>
 
 
             <div class="entry pink-link-context">
-                <hr>
+                <h1 id="01-wenkan的安装"><a href="#01-wenkan的安装" class="headerlink" title="01-wenkan的安装"></a>01-wenkan的安装</h1><p>公司内网里面没法装，为了方便先在自己家里装好然后虚拟机传到公司，升级自己的Wekan面板</p>
+<h2 id="查找文档（Github原文）"><a href="#查找文档（Github原文）" class="headerlink" title="查找文档（Github原文）"></a>查找文档（<a href="https://github.com/wekan/wekan/wiki/Windows" target="_blank" rel="noopener">Github原文</a>）</h2><p><a href="以下内容来自谷歌翻译.">^1</a></p>
+<ol>
+<li><p>与Windows Node + MongoDB捆绑</p>
 <ul>
-<li>为什么要弄一个博客？<ul>
-<li>今天的我的回答是：通过与一些优秀的人一起工作，发现自己太缺少沉淀的过程，故而希望通 过博客的方式将自己的学习记录下来，有复盘的机会</li>
-<li>另一个就是领导给了一个新命题：IVD专业的交互设计方法论探索，期望通过博客的形式记录下来，强迫自己沉下去，仔细想，不要“以为自己懂了”，因为还需要将方法论真正的传递出去的。</li>
+<li>它具有最高的性能和最低的RAM使用率，因为没有像Docker，Windows Linux子系统之类的虚拟化技术。Wekan在Windows文件系统上直接使用Windows本机版本的Node.js和MongoDB运行。如果您在Wekan中有重要数据，请进行备份。</li>
+</ul>
+</li>
+<li><p>为Windows安装最新的Node.js v12.xx <a href="https://nodejs.org/dist/v12.16.1/" target="_blank" rel="noopener">https://nodejs.org/dist/v12.16.1/</a></p>
+</li>
+<li><p>为Windows安装MongoDB 4.x <a href="https://www.mongodb.com/download-center/community" target="_blank" rel="noopener">https://www.mongodb.com/download-center/community</a></p>
+</li>
+<li><p>从<a href="https://releases.wekan.team下载和最新的Wekan软件包wekan-3.xx.zip" target="_blank" rel="noopener">https://releases.wekan.team下载和最新的Wekan软件包wekan-3.xx.zip</a></p>
+</li>
+<li><p>解压缩wekan-3.xx.zip，它具有目录名称 bundle</p>
+</li>
+</ol>
+<p>（这不是必需的）像在bundle wiki页面上一样，对于bundle也同样如此：</p>
+<pre><code>cd bundle/programs/server
+npm install
+npm install node-gyp node-pre-gyp fibers
+cd ..\..\..</code></pre><ol start="6">
+<li><p>将start-wekan.bat下载到您的bundle目录。根据您的ROOT_URL等设置对其进行编辑。</p>
+</li>
+<li><p>启动Wekan：</p>
+</li>
+<li><p>cd bundle</p>
+</li>
+<li><p>start-wekan.bat</p>
+</li>
+<li><p>添加用户。</p>
+</li>
+</ol>
+<h2 id="自己动手"><a href="#自己动手" class="headerlink" title="自己动手"></a>自己动手</h2><ol start="0">
+<li><p>理论知识已经准备好，那么开始动手吧  </p>
+<ul>
+<li>先下载Node.js MongoDB 4.x  wekan-3.xx.zip</li>
+</ul>
+</li>
+<li><p>安装虚拟机Virual Box  </p>
+<ul>
+<li>安装Win7系统</li>
+<li>问题：安装报错：0x8000036，原因：选择的系统32位的，但是ISO文件是64位的，重新新建即可</li>
+</ul>
+</li>
+<li><p>安装Node.Jjs  </p>
+<ul>
+<li>一步过没有问题</li>
+</ul>
+</li>
+<li><p>解压文件：  </p>
+<ul>
+<li>一步过没有问题</li>
+</ul>
+</li>
+<li><p>安装 Mogndb  </p>
+<ul>
+<li>点击exe，下一步，下一步</li>
+<li>问题： <img src="_v_images/20200501144040793_17192.png" alt="一直卡死了"><ul>
+<li>万能的度娘：<img src="_v_images/20200501144154451_14922.png" alt="原因"> </li>
+<li>那么MongoDB Compass是什么？ MongoDB的可视工具，就我小白而言还是用这个吧，等着安装好吧….<ul>
+<li>等了一天之后，放弃了，再查原来可以分两步来做</li>
+</ul>
+</li>
+<li><img src="_v_images/20200501171020755_7702.png" alt="Server failed to Start"><ul>
+<li><a href="https://blog.csdn.net/leoofchina1981/article/details/88967142" target="_blank" rel="noopener">解决方案</a> 原来是少  【vc_redist.x64.msi】 依赖包</li>
+<li>mongod -dbpath<img src="_v_images/20200501203237100_23689.png" alt="错误">   名称不要带空格，不然也会安装失败</li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li>第6步可以直接跳过…</li>
+</ul>
+</li>
+</ol>
+<p><img src="_v_images/20200501211357581_21336.png" alt="大工告成"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>  开源的用户从来都不是普通人….</p>
 
                 
-<p class="pink-link-context">
-    <a href="/2020/05/01/wenkan%E7%9A%84%E5%AE%89%E8%A3%85/" rel="next" title="wenkan的安装">
-    Prev: wenkan的安装
-  </a>
-</p>
-
 
 
 <p class="pink-link-context">
-    <a href="/2020/04/19/hello-world/" rel="next" title="Hello World">
-    Next: Hello World
+    <a href="/2020/04/19/%E5%BB%BA%E7%AB%99Flag/" rel="next" title="建站Flag">
+    Next: 建站Flag
   </a>
 </p>
 
